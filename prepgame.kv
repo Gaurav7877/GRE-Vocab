@@ -1,0 +1,199 @@
+<MyRoot>:
+
+    summon_label: summon_label
+    ques_label: ques_label
+    def1_label: def1_label
+    def2_label: def2_label
+    def3_label: def3_label
+    def4_label: def4_label
+    gold_label: gold_label
+    next_level_label: next_level_label
+    start_label: start_label
+    best_summon_label: best_summon_label
+
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.1, 0.1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    GridLayout:
+        cols: 1
+        spacing: 15
+        padding: 15
+
+        GridLayout:
+            cols: 2
+            spacing: 5
+            col_force_default: False
+            row_force_default: False
+            Label:
+                text: "B R U H H H H H"
+                halign: 'left'
+                valign: 'center'
+                padding: 10
+                text_size: self.size
+                size_hint: .7, 1
+                color: 1, 1, 1, 0.90
+            Label:
+                id: gold_label
+                text: "G: 0"
+                halign: 'left'
+                valign: 'center'
+                padding: 10
+                text_size: self.size
+                size_hint: 0.3, 1
+                color: 1, 1, 1, 0.90
+            Button:
+                id: best_summon_label
+                text: "Best Summon"
+                halign: 'left'
+                valign: 'center'
+                padding: 10
+                text_size: self.size
+                size_hint: .7, 1
+                color: 1, 1, 1, 0.90
+                background_color: 0.5, 0.5, 0.5, 0.3
+                on_press: self.background_color = (0, 0, 0, 0.05)
+                on_release: self.background_color = (0.5, 0.5, 0.5, 0.3)
+                on_press: root.best_summon()
+
+            Button:
+                text: "summon"
+                halign: 'center'
+                valign: 'center'
+                text_size: self.size
+                size_hint: .3, 1
+                color: 1, 1, 1, 0.90
+                background_color: 1, 0, 0, 1
+                on_press: root.summon()
+
+        Button:
+            id: summon_label
+            text: '- - - - - - - - - -'
+            halign: 'left'
+            valign: 'center'
+            padding: 10
+            text_size: self.size
+            size_hint: 1, 0.6
+            color: 1, 1, 1, 0.9
+            background_color: 1, 1, 1, 0
+            on_press: root.create_hype()
+#            on_release: self.color = (1, 1, 1, 0.9)
+
+        Label:
+            id: ques_label
+            text: "Press Start"
+            halign: 'left'
+            valign: 'center'
+            padding: 10
+            text_size: self.size
+            font_size: 0.5 * self.height
+            size_hint: .8, 1
+            color: 1, 1, 1, 0.90
+
+#        GridLayout:
+#            cols: 2
+#            spacing: 5
+#            col_force_default: False
+#            row_force_default: False
+#            Label:
+#                id: ques_label
+#                text: "Press Start"
+#                halign: 'left'
+#                valign: 'center'
+#                padding: 10
+#                text_size: self.size
+#                font_size: 0.5 * self.height
+#                size_hint: .8, 1
+#                color: 1,1,1,1
+#            Label:
+#                text: "1/100"
+#                halign: 'center'
+#                valign: 'center'
+#                text_size: self.size
+#                font_size: 0.25 * self.width
+#                size_hint: 0.2, 1
+
+        Button:
+            id: def1_label
+            text: '- - - - - - - - - -'
+            halign: 'left'
+            valign: 'center'
+            padding: 10
+            text_size: self.size
+            color: 1, 1, 1, 0.90
+            background_color: 0.5, 0.5, 0.5, 0.3
+            on_press: self.background_color = (0, 0, 0, 0.05)
+            on_release: self.background_color = (0.5, 0.5, 0.5, 0.3)
+            on_press: root.option1_press()
+        Button:
+            id: def2_label
+            text: '- - - - - - - - - -'
+            halign: 'left'
+            valign: 'center'
+            padding: 10
+            text_size: self.size
+            color: 1, 1, 1, 0.90
+            background_color: 0.5, 0.5, 0.5, 0.3
+            on_press: self.background_color = (0, 0, 0, 0.05)
+            on_release: self.background_color = (0.5, 0.5, 0.5, 0.3)
+            on_press: root.option2_press()
+        Button:
+            id: def3_label
+            text: '- - - - - - - - - -'
+            halign: 'left'
+            valign: 'center'
+            padding: 10
+            text_size: self.size
+            color: 1, 1, 1, 0.90
+            background_color: 0.5, 0.5, 0.5, 0.3
+            on_press: self.background_color = (0, 0, 0, 0.05)
+            on_release: self.background_color = (0.5, 0.5, 0.5, 0.3)
+            on_press: root.option3_press()
+        Button:
+            id: def4_label
+            text: '- - - - - - - - - -'
+            halign: 'left'
+            valign: 'center'
+            padding: 10
+            text_size: self.size
+            color: 1, 1, 1, 0.90
+            background_color: 0.5, 0.5, 0.5, 0.3
+            on_press: self.background_color = (0, 0, 0, 0.05)
+            on_release: self.background_color = (0.5, 0.5, 0.5, 0.3)
+            on_press: root.option4_press()
+
+        GridLayout:
+            cols: 2
+            spacing: 5
+            col_force_default: False
+            row_force_default: False
+            Button:
+                id: next_level_label
+                text: "Levels"
+                halign: 'left'
+                valign: 'center'
+                padding: 10
+                text_size: self.size
+                size_hint: .5, 1
+                color: 1, 1, 1, 0.90
+                background_color: 0.5, 0.5, 0.5, 0.3
+                on_press: self.background_color = (0, 0, 0, 0.05)
+                on_release: self.background_color = (0.5, 0.5, 0.5, 0.3)
+                on_press: root.level_options()
+            Button:
+                id: start_label
+                text: "Start"
+                halign: 'center'
+                valign: 'center'
+                text_size: self.size
+                size_hint: .5, 1
+                color: 1, 1, 1, 0.90
+                background_color: 0.5, 0.5, 0.5, 0.3
+                on_press: self.background_color = (0, 0, 0, 0.05)
+                on_release: self.background_color = (0.5, 0.5, 0.5, 0.3)
+                on_press: root.next_question()
+
